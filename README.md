@@ -2,7 +2,7 @@
 
 A fully offline [Mermaid](https://mermaid.js.org/) diagram viewer that ships as **one self-contained HTML file**. Paste a diagram, see it rendered instantly — no internet, no install, no account, no build step for the user. Just open the file in any browser.
 
-![mermview light mode](docs/screenshot-light.png)
+![mermview rendering a CI/CD pipeline flowchart in light mode](docs/screenshot-light.png)
 
 ## Why
 
@@ -22,7 +22,7 @@ mermview is the antidote: a single `index.html` with the entire Mermaid renderer
 - **Resizable, collapsible editor** — drag the divider, or hide the code pane entirely and give the diagram the full window
 - **Every Mermaid diagram type** — flowcharts, sequence, class, state, ER, gantt, pie, mindmaps, and everything else Mermaid supports
 
-![mermview dark mode with a sequence diagram](docs/screenshot-dark.png)
+![mermview rendering an OAuth 2.0 sequence diagram in dark mode](docs/screenshot-dark.png)
 
 ## Getting started
 
