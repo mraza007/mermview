@@ -1,0 +1,163 @@
+:root {
+  --bg: #ffffff;
+  --bg-panel: #f6f7f9;
+  --fg: #1c2128;
+  --fg-muted: #6b7280;
+  --border: #d8dce2;
+  --accent: #2563eb;
+  --error-bg: #fde8e8;
+  --error-fg: #b91c1c;
+}
+
+:root[data-theme="dark"] {
+  --bg: #16181d;
+  --bg-panel: #1e2128;
+  --fg: #e5e7eb;
+  --fg-muted: #9ca3af;
+  --border: #33373f;
+  --accent: #60a5fa;
+  --error-bg: #3b1d1d;
+  --error-fg: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  flex: 0 0 auto;
+}
+
+#toolbar .spacer {
+  flex: 1;
+}
+
+#toolbar button,
+#toolbar select {
+  font: inherit;
+  font-size: 13px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+#toolbar button:hover,
+#toolbar select:hover {
+  border-color: var(--accent);
+}
+
+#split {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+#editor-pane {
+  flex: 0 0 var(--editor-width, 34%);
+  min-width: 0;
+  display: flex;
+}
+
+#editor {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  background: var(--bg-panel);
+  color: var(--fg);
+}
+
+#divider {
+  flex: 0 0 5px;
+  cursor: col-resize;
+  background: var(--border);
+}
+
+#divider:hover {
+  background: var(--accent);
+}
+
+body.editor-collapsed #editor-pane,
+body.editor-collapsed #divider {
+  display: none;
+}
+
+#preview-pane {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+
+#viewport.panning {
+  cursor: grabbing;
+}
+
+#stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+#error-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  background: var(--error-bg);
+  color: var(--error-fg);
+  border-top: 1px solid var(--error-fg);
+}
+
+#toast {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--fg);
+  color: var(--bg);
+  opacity: 0.9;
+}

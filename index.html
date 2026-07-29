@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mermview</title>
+  </head>
+  <body>
+    <header id="toolbar">
+      <button id="toggle-editor" title="Show/hide the code editor">Hide code</button>
+      <span class="spacer"></span>
+      <button id="fit" title="Fit diagram to view">Fit</button>
+      <button id="export-svg" title="Download as SVG">SVG</button>
+      <button id="export-png" title="Download as PNG">PNG</button>
+      <button id="copy-png" title="Copy PNG to clipboard">Copy PNG</button>
+      <select id="mermaid-theme" title="Diagram theme">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="forest">Forest</option>
+        <option value="neutral">Neutral</option>
+        <option value="base">Base</option>
+      </select>
+      <button id="toggle-app-theme" title="Toggle light/dark mode">🌙</button>
+    </header>
+    <main id="split">
+      <div id="editor-pane">
+        <textarea
+          id="editor"
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="off"
+          placeholder="Paste or type a mermaid diagram…"
+        ></textarea>
+      </div>
+      <div id="divider"></div>
+      <div id="preview-pane">
+        <div id="viewport">
+          <div id="stage"></div>
+        </div>
+        <div id="error-bar" hidden></div>
+        <div id="toast" hidden></div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
